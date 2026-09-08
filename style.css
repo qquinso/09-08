@@ -111,18 +111,38 @@ body {
 
 .bow {
   position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 50px;
+  z-index: 6;
+}
 
-  width: 70px;
+/* Left loop */
+.bow::before {
+  content: "";
+  position: absolute;
+  width: 50px;
   height: 35px;
-
   background: gold;
+  border-radius: 50% 50% 50% 10%;
+  left: 0;
+  top: 5px;
+  transform: rotate(-20deg);
+}
 
-  border-radius: 50%;
-
-  top: -10px;
-  left: 65px;
-
-  z-index: 5;
+/* Right loop */
+.bow::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 35px;
+  background: gold;
+  border-radius: 50% 50% 10% 50%;
+  right: 0;
+  top: 5px;
+  transform: rotate(20deg);
 }
 
 
