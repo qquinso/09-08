@@ -1,0 +1,366 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    135deg,
+    #fff0f5,
+    #fffacd,
+    #e6f7ff
+  );
+  color: #333;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+
+/* DECORATIONS */
+
+.decorations {
+  position: fixed;
+  top: 10px;
+  width: 100%;
+  font-size: 30px;
+  letter-spacing: 20px;
+  animation: float 3s ease-in-out infinite;
+  z-index: 10;
+  pointer-events: none;
+}
+
+@keyframes float {
+
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+}
+
+
+/* GIFT SCREEN */
+
+#gift-screen {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+}
+
+#gift-screen h1 {
+  font-size: 2.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+}
+
+
+/* GIFT */
+
+.gift-container {
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.gift-container:hover {
+  transform: scale(1.08);
+}
+
+.gift {
+  position: relative;
+  width: 200px;
+  height: 180px;
+}
+
+
+/* BOX */
+
+.box {
+  position: absolute;
+  bottom: 0;
+
+  width: 200px;
+  height: 140px;
+
+  background: #ff6b6b;
+
+  border-radius: 10px;
+}
+
+
+/* LID */
+
+.lid {
+  position: absolute;
+
+  top: 20px;
+
+  width: 220px;
+  height: 50px;
+
+  left: -10px;
+
+  background: #ff8787;
+
+  border-radius: 10px;
+
+  z-index: 2;
+}
+
+
+/* RIBBON */
+
+.ribbon-vertical {
+  position: absolute;
+
+  width: 30px;
+  height: 140px;
+
+  background: gold;
+
+  left: 85px;
+  bottom: 0;
+
+  z-index: 3;
+}
+
+.ribbon-horizontal {
+  position: absolute;
+
+  width: 220px;
+  height: 20px;
+
+  background: gold;
+
+  top: 35px;
+  left: -10px;
+
+  z-index: 4;
+}
+
+
+/* BOW */
+
+.bow {
+  position: absolute;
+
+  top: -30px;
+  left: 65px;
+
+  font-size: 60px;
+
+  z-index: 5;
+}
+
+
+.click-text {
+  font-size: 1.4rem;
+  font-weight: bold;
+
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+}
+
+
+/* BIRTHDAY CONTENT */
+
+#birthday-content {
+  display: none;
+
+  padding: 80px 20px;
+
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+.birthday-message {
+
+  max-width: 700px;
+
+  margin: auto;
+
+  font-size: 1.3rem;
+
+  line-height: 1.7;
+
+}
+
+.birthday-message h1 {
+
+  font-size: 3rem;
+
+  animation: bounce 1s infinite;
+
+}
+
+.corny-text {
+
+  font-size: 2rem;
+
+}
+
+
+/* PHOTOS */
+
+.photo-title {
+
+  margin-top: 80px;
+
+  font-size: 2rem;
+
+}
+
+.photo-subtitle {
+
+  font-style: italic;
+
+  margin-bottom: 40px;
+
+}
+
+
+.photo-gallery {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 30px;
+
+}
+
+
+.photo-card {
+
+  width: 280px;
+
+  background: white;
+
+  padding: 15px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+  transition: transform 0.3s;
+
+}
+
+.photo-card:hover {
+
+  transform: rotate(2deg) scale(1.05);
+
+}
+
+
+.photo-card img {
+
+  width: 100%;
+
+  height: 250px;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+
+}
+
+
+.photo-card p {
+
+  font-size: 1rem;
+
+  padding: 10px;
+
+}
+
+
+/* FINAL MESSAGE */
+
+.final-message {
+
+  margin-top: 100px;
+
+  padding: 50px 20px;
+
+  background: rgba(255,255,255,0.7);
+
+  border-radius: 30px;
+
+  max-width: 800px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+.final-message h1 {
+
+  font-size: 2.5rem;
+
+}
+
+
+.signature {
+
+  margin-top: 40px;
+
+  font-style: italic;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  #gift-screen h1 {
+    font-size: 1.8rem;
+  }
+
+  .birthday-message h1 {
+    font-size: 2rem;
+  }
+
+  .photo-card {
+    width: 90%;
+  }
+
+}
