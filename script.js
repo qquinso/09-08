@@ -1,17 +1,14 @@
 function openGift() {
 
-  // Hide gift screen
+  // Hide the gift screen
   document.getElementById("gift-screen").style.display = "none";
 
   // Show birthday content
   document.getElementById("birthday-content").style.display = "block";
 
-
-  // Confetti explosion
+  // Create falling confetti
   for (let i = 0; i < 150; i++) {
-
     createConfetti();
-
   }
 
 }
@@ -21,18 +18,27 @@ function createConfetti() {
 
   const confetti = document.createElement("div");
 
-  confetti.innerHTML = "🎉";
+  // Random confetti characters
+  const confettiTypes = ["🎉", "🎊", "✨", "⭐"];
+
+  confetti.innerHTML =
+    confettiTypes[
+      Math.floor(Math.random() * confettiTypes.length)
+    ];
 
   confetti.style.position = "fixed";
 
-  confetti.style.left = Math.random() * 100 + "vw";
+  confetti.style.left =
+    Math.random() * 100 + "vw";
 
   confetti.style.top = "-50px";
 
   confetti.style.fontSize =
-    Math.random() * 30 + 20 + "px";
+    Math.random() * 25 + 15 + "px";
 
   confetti.style.zIndex = "999";
+
+  confetti.style.pointerEvents = "none";
 
   document.body.appendChild(confetti);
 
